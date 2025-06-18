@@ -16,7 +16,7 @@ function Header() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center gap-2">
           {/* Placeholder for Logo */}
-          <img src="/src/assets/react.svg" alt="Evaltree Logo" className="h-8 w-8" />
+          <img src="/react.svg" alt="Evaltree Logo" className="h-8 w-8" />
           <span className="text-xl sm:text-2xl font-bold text-[color:var(--primary-color)]">Evaltree</span>
         </div>
         
@@ -63,7 +63,7 @@ function Footer() {
   return (
     <footer className="bg-[color:var(--neutral-color-light)] text-center py-4 mt-12 shadow-inner" style={{ fontFamily: "var(--font-body)" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <span className="text-gray-500">© {new Date().getFullYear()} Evaltree. All rights reserved.</span>
+        <span className="text-gray-500">© {new Date().getFullYear()} Evaltree By Mihir Dodiya All rights reserved.</span>
       </div>
     </footer>
   );
