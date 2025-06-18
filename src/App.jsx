@@ -5,6 +5,8 @@ import "./index.css";
 import Home from "./pages/Home";
 import Marketplace from "./pages/Marketplace";
 import MyAssets from "./pages/MyAssets";
+import IssueCollectible from "./pages/IssueCollectible";
+import { CollectiblesProvider } from "./hooks/useCollectibles.jsx";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,6 +25,7 @@ function Header() {
           <Link to="/" className="hover:text-[color:var(--accent-color)] transition-colors">Home</Link>
           <Link to="/marketplace" className="hover:text-[color:var(--accent-color)] transition-colors">Marketplace</Link>
           <Link to="/my-assets" className="hover:text-[color:var(--accent-color)] transition-colors">My Assets</Link>
+          <Link to="/issue" className="hover:text-[color:var(--accent-color)] transition-colors">Issue Collectible</Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -48,6 +51,7 @@ function Header() {
             <Link to="/" className="hover:text-[color:var(--accent-color)] transition-colors px-4" onClick={() => setIsMenuOpen(false)}>Home</Link>
             <Link to="/marketplace" className="hover:text-[color:var(--accent-color)] transition-colors px-4" onClick={() => setIsMenuOpen(false)}>Marketplace</Link>
             <Link to="/my-assets" className="hover:text-[color:var(--accent-color)] transition-colors px-4" onClick={() => setIsMenuOpen(false)}>My Assets</Link>
+            <Link to="/issue" className="hover:text-[color:var(--accent-color)] transition-colors px-4" onClick={() => setIsMenuOpen(false)}>Issue Collectible</Link>
           </div>
         </motion.nav>
       )}
@@ -67,21 +71,24 @@ function Footer() {
 
 function App() {
   return (
-    <Router>
-      <div className="min-h-screen w-full flex flex-col bg-gradient-to-r from-[color:var(--neutral-color)] via-[color:var(--neutral-color-light)] to-[color:var(--neutral-color)]">
-        <Header />
-        <motion.main className="flex-1 flex flex-col items-center justify-center w-full" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-          <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/marketplace" element={<Marketplace />} />
-              <Route path="/my-assets" element={<MyAssets />} />
-            </Routes>
-          </div>
-        </motion.main>
-        <Footer />
-      </div>
-    </Router>
+    <CollectiblesProvider>
+      <Router>
+        <div className="min-h-screen w-full flex flex-col bg-gradient-to-r from-[color:var(--neutral-color)] via-[color:var(--neutral-color-light)] to-[color:var(--neutral-color)]">
+          <Header />
+          <motion.main className="flex-1 flex flex-col items-center justify-center w-full" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+            <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/marketplace" element={<Marketplace />} />
+                <Route path="/my-assets" element={<MyAssets />} />
+                <Route path="/issue" element={<IssueCollectible />} />
+              </Routes>
+            </div>
+          </motion.main>
+          <Footer />
+        </div>
+      </Router>
+    </CollectiblesProvider>
   );
 }
 
