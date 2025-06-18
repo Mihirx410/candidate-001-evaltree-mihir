@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Evaltree Collectibles Frontend
 
 Welcome to the Evaltree technical assessment project! This is a modern, responsive frontend for a digital collectibles platform, built for a Web Developer role.
@@ -34,3 +35,7 @@ Evaltree is a platform for issuing, viewing, and (simulated) purchasing limited-
 ---
 
 Made with ❤️ for the Evaltree assessment.
+=======
+# Evaltree
+Evaltree Assesment
+>>>>>>> 5dbdbe3008a22c9e27247621af5a029f8bb8b784
